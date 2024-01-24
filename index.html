@@ -31,8 +31,8 @@
                 <div class="col-4 h-80vh bg-white d-flex flex-column">
                     <div class="left-header br-l-grey d-flex align-items-center justify-content-between">
                         <div class="left d-flex align-items-center justify-content-between gap-3 ps-3">
-                            <img src="img/avatar_io.jpg" alt="">
-                            <h5 class="mb-0">Nome Utente</h5>
+                            <img :src="`img/avatar${data.user.avatar}.jpg`" :alt="data.user.name">
+                            <h5 class="mb-0">{{data.user.name}}</h5>
                         </div>
                         <div class="right d-flex align-items-center justify-content-between gap-3 pe-3">
                             <i class="fa-solid fa-circle-notch" style="color: #b1b1b4;"></i>
@@ -82,9 +82,9 @@
                 <div class="col-8 h-80vh bg-grey">
                     <div class="right-header d-flex align-items-center justify-content-between pe-3">
                         <div class="left d-flex align-items-center ps-3">
-                            <img src="img/avatar_io.jpg" alt="">
+                            <img src="img/avatar_1.jpg" alt="">
                             <div class="chat-header-text-container ms-3">
-                                <h5 class="mb-0">Nome Utente</h5>
+                                <h5 class="mb-0">Michele</h5>
                                 <p class="mb-0">Ultimo accesso oggi alle</p>
                             </div>
                         </div>

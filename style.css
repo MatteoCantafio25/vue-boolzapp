@@ -100,6 +100,10 @@ img {
     background-color: #EAEAEA;
 }
 
+.chat-header-text-container p {
+    color: #968A84;
+}
+
 .chat {
     height: 82%;
     background-image: url(img/mine.jpg);
