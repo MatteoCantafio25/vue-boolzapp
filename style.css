@@ -1,0 +1,38 @@
+/* Generics */
+
+#root {
+    height: 100vh;
+    background: linear-gradient(#009688 15%, #DADBD3 15%);
+}
+
+
+/* Utils */
+
+.b-black {
+    border: 2px dashed black;
+}
+
+.bg-white {
+    background-color: white;
+}
+
+.h-80vh {
+    height: 80vh;
+}
+
+.w-1500px {
+    width: 1500px;
+}
+
+
+/* Header */
+
+
+
+
+/* Main */
+
+
+
+
+/* Footer */
