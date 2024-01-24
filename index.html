@@ -28,18 +28,58 @@
     <div id="root" class="d-flex align-items-center justify-content-center">
         <div>
             <div class="row h-80vh w-1500px g-0">
-                <div class="col-4 h-80vh bg-white b-black d-flex flex-column">
-                    <div class="left-header"></div>
-                    <div class="noti-panel"></div>
-                    <div class="contact-search-bar"></div>
+                <div class="col-4 h-80vh bg-white d-flex flex-column">
+                    <div class="left-header br-l-grey d-flex align-items-center justify-content-between">
+                        <div class="left d-flex align-items-center justify-content-between gap-3 ps-3">
+                            <img src="img/avatar_io.jpg" alt="">
+                            <h5 class="mb-0">Nome Utente</h5>
+                        </div>
+                        <div class="right d-flex align-items-center justify-content-between gap-3 pe-3">
+                            <i class="fa-solid fa-circle-notch" style="color: #b1b1b4;"></i>
+                            <i class="fa-solid fa-message" style="color: #b1b1b4;"></i>
+                            <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b4;"></i>
+                        </div>
+                    </div>
+                    <div class="noti-panel d-flex align-items-center ">
+                        <i class="noti-icon fa-solid fa-bell-slash ms-3" style="color: #8EDAFC;"></i>
+                        <div class="noti-text-container ms-3">
+                            <p class="mb-0">Ricevi notifiche di nuovi messaggi</p>
+                            <a href="#">Attiva notifiche desktop</a>
+                        </div>
+                    </div>
+                    <div class="contact-search-bar input-group d-flex align-items-center justify-content-center mb-0">
+                        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"
+                                style="color: #b1b1b4;"></i></span>
+                        <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                    </div>
                     <div class="contact-panel">
-                        <div class="contact"></div>
-                        <div class="contact"></div>
-                        <div class="contact"></div>
-                        <div class="contact"></div>
+                        <div class="contact d-flex align-items-center gap-2 ms-4">
+                            <img src="img/avatar_1.jpg" alt="">
+                            <div class="contact-text-container d-flex align-items-start pb-4">
+                                <h5 class="mb-0">Michele</h5>
+                            </div>
+                        </div>
+                        <div class="contact d-flex align-items-center gap-2 ms-4">
+                            <img src="img/avatar_2.jpg" alt="">
+                            <div class="contact-text-container d-flex align-items-start pb-4">
+                                <h5 class="mb-0">Fabio</h5>
+                            </div>
+                        </div>
+                        <div class="contact d-flex align-items-center gap-2 ms-4">
+                            <img src="img/avatar_3.jpg" alt="">
+                            <div class="contact-text-container d-flex align-items-start pb-4">
+                                <h5 class="mb-0">Samuele</h5>
+                            </div>
+                        </div>
+                        <div class="contact d-flex align-items-center gap-2 ms-4">
+                            <img src="img/avatar_4.jpg" alt="">
+                            <div class="contact-text-container d-flex align-items-start pb-4">
+                                <h5 class="mb-0">Luisa</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-8 h-80vh bg-white b-black">
+                <div class="col-8 h-80vh bg-white">
                     <div class="right-header"></div>
                     <div class="chat"></div>
                     <div class="typing-section"></div>

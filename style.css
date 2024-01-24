@@ -5,11 +5,21 @@
     background: linear-gradient(#009688 15%, #DADBD3 15%);
 }
 
+img {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
 
 /* Utils */
 
 .b-black {
     border: 2px dashed black;
+}
+
+.br-l-grey {
+    border-right: 1px solid lightgray;
 }
 
 .bg-white {
@@ -53,6 +63,31 @@
     border-bottom: 2px solid #FBFBFB;
 }
 
+.right i {
+    font-size: 1.5rem;
+}
+
+.noti-icon {
+    font-size: 1.5rem;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.noti-text-container a {
+    color: #658B9A;
+}
+
+.contact-search-bar span {
+    height: 38px;
+}
+
+.contact-search-bar input {
+    max-width: 440px;
+}
 
 /* Right col */
 
