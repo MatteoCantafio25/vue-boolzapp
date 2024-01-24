@@ -25,14 +25,49 @@
 }
 
 
-/* Header */
+/* Left col */
+
+.left-header {
+    height: 10%;
+    background-color: #EAEAEA;
+}
+
+.noti-panel {
+    height: 11%;
+    background-color: #8EDAFC;
+}
+
+.contact-search-bar {
+    height: 7%;
+    background-color: #FAFAFA;
+}
+
+.contact-panel {
+    height: 72%;
+    overflow-y: scroll;
+}
+
+.contact {
+    height: 80px;
+    background-color: white;
+    border-bottom: 2px solid #FBFBFB;
+}
 
 
+/* Right col */
 
+.right-header {
+    height: 10%;
+    background-color: #EAEAEA;
+}
 
-/* Main */
+.chat {
+    height: 82%;
+    background-image: url(img/mine.jpg);
+    overflow-y: scroll;
+}
 
-
-
-
-/* Footer */
+.typing-section {
+    height: 8%;
+    background-color: #EAEAEA;
+}
