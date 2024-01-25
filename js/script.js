@@ -12,9 +12,16 @@ const app = createApp({
         // CREO L'OGGETTO
         return {
             // PREDO GLI ELEMENTI NELLA PAGE DATA
-            data,
+            user,
+            contacts,
         }
     },
+
+    methods: {
+        getAvatarUrl({ avatar }) {
+            return `img/avatar${avatar}.jpg`
+        }
+    }
 })
 
 // MONTO L'APPLICAZIONE NELL'ELEMENTO SELEZIONATO TRA PARENTESI
