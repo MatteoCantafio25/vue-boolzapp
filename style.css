@@ -115,6 +115,22 @@ img {
     overflow-y: scroll;
 }
 
+
+.message-container.sent .message {
+    background-color: #D5F9BA;
+}
+
+.message-container.received .message {
+    background-color: white;
+}
+
+.message-container .message small {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    color: #C2CDBB;
+}
+
 .typing-section {
     height: 8%;
     background-color: #EAEAEA;
