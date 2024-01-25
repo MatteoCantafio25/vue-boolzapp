@@ -14,8 +14,10 @@ const app = createApp({
             // PREDO GLI ELEMENTI NELLA PAGE DATA
             user,
             contacts,
+            messages,
             currentId: 1,
             active: false,
+            searchText: "",
         }
     },
 
@@ -23,8 +25,16 @@ const app = createApp({
         currentContact() {
             return this.contacts.find((contact) => {
                 if (this.currentId === contact.id) return contact
-            })
+            });
         },
+
+        filteredContacts() {
+            const searchTerm = this.searchText.toLowerCase();
+
+            return this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(searchTerm)
+            );
+        }
     },
 
     methods: {

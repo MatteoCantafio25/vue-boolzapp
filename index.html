@@ -54,11 +54,12 @@
                 <div class="contact-search-bar input-group d-flex align-items-center justify-content-center mb-0">
                     <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"
                             style="color: #b1b1b4;"></i></span>
-                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
+                        v-model.trim="searchText">
                 </div>
                 <!-- Contact Panel -->
                 <div class="contact-panel">
-                    <div v-for="contact in contacts" :key="contact.id"
+                    <div v-for="contact in filteredContacts" :key="contact.id"
                         class="contact d-flex align-items-center gap-2 ps-4"
                         :class="{'active' : contact.active === true}" @click="isActive(contact.id)">
                         <img :src="getAvatarUrl(contact)" :alt="contact.name">
@@ -74,7 +75,7 @@
                 <div class="right-header d-flex align-items-center justify-content-between pe-3">
                     <div class="left d-flex align-items-center ps-3">
                         <img :src="getAvatarUrl(currentContact)" :alt="currentContact.name">
-                        <div class="chat-header-text-container ms-3">
+                        <div class="right-header-text-container ms-3">
                             <h5 class="mb-0">{{currentContact.name}}</h5>
                             <p class="mb-0">Ultimo accesso oggi alle</p>
                         </div>
