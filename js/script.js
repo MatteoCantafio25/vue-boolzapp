@@ -11,10 +11,9 @@ const app = createApp({
     data() {
         // CREO L'OGGETTO
         return {
-            // PREDO GLI ELEMENTI NELLA PAGE DATA
+            // PRENDO GLI ELEMENTI NELLA PAGE DATA
             user,
             contacts,
-            messages,
             currentId: 1,
             active: false,
             searchText: "",
@@ -27,6 +26,7 @@ const app = createApp({
                 if (this.currentId === contact.id) return contact
             });
         },
+
 
         filteredContacts() {
             const searchTerm = this.searchText.toLowerCase();

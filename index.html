@@ -89,16 +89,12 @@
                 <!-- Chat -->
                 <div class="chat">
                     <ul class="px-3">
-                        <li class="message-container d-flex justify-content-end p-3 sent">
+                        <li v-for="message in currentContact.messages" :key="message.id"
+                            class="message-container d-flex p-3"
+                            :class="{'sent' : message.status === 'sent'},{'received' : message.status === 'received'}">
                             <div class="message p-2 rounded-3">
-                                <p class="mb-0">Hai portato a spasso il cane?</p>
-                                <small>31/01/2022 - 12:13</small>
-                            </div>
-                        </li>
-                        <li class="message-container d-flex justify-content-start p-3 received">
-                            <div class="message p-2 rounded-3">
-                                <p class="mb-0">Si!</p>
-                                <small>31/01/2022 - 12:14</small>
+                                <p class="mb-0">{{message.text}}</p>
+                                <small>{{message.date}}</small>
                             </div>
                         </li>
                     </ul>
