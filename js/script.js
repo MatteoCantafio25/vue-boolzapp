@@ -14,13 +14,34 @@ const app = createApp({
             // PREDO GLI ELEMENTI NELLA PAGE DATA
             user,
             contacts,
+            currentId: 1,
+            active: false,
         }
+    },
+
+    computed: {
+        currentContact() {
+            return this.contacts.find((contact) => {
+                if (this.currentId === contact.id) return contact
+            })
+        },
     },
 
     methods: {
         getAvatarUrl({ avatar }) {
             return `img/avatar${avatar}.jpg`
-        }
+        },
+
+        isActive(id) {
+            this.currentId = id;
+            this.contacts.forEach(contact => {
+                if (id === contact.id) {
+                    contact.active = true
+                } else {
+                    contact.active = false
+                }
+            });
+        },
     }
 })
 

@@ -58,7 +58,9 @@
                 </div>
                 <!-- Contact Panel -->
                 <div class="contact-panel">
-                    <div v-for="contact in contacts" class="contact d-flex align-items-center gap-2 ms-4">
+                    <div v-for="contact in contacts" :key="contact.id"
+                        class="contact d-flex align-items-center gap-2 ps-4"
+                        :class="{'active' : contact.active === true}" @click="isActive(contact.id)">
                         <img :src="getAvatarUrl(contact)" :alt="contact.name">
                         <div class="contact-text-container d-flex align-items-start pb-4">
                             <h5 class="mb-0">{{contact.name}}</h5>
@@ -71,9 +73,9 @@
                 <!-- Right header -->
                 <div class="right-header d-flex align-items-center justify-content-between pe-3">
                     <div class="left d-flex align-items-center ps-3">
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img :src="getAvatarUrl(currentContact)" :alt="currentContact.name">
                         <div class="chat-header-text-container ms-3">
-                            <h5 class="mb-0">Michele</h5>
+                            <h5 class="mb-0">{{currentContact.name}}</h5>
                             <p class="mb-0">Ultimo accesso oggi alle</p>
                         </div>
                     </div>
