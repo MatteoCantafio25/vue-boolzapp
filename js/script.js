@@ -17,16 +17,18 @@ const app = createApp({
             currentId: 1,
             active: false,
             searchText: "",
+            newMessageText: "",
         }
     },
 
     computed: {
         currentContact() {
-            return this.contacts.find((contact) => {
-                if (this.currentId === contact.id) return contact
-            });
+            return this.contacts.find(contact => this.currentId === contact.id);
         },
 
+        currentChat() {
+            return this.currentContact.messages;
+        },
 
         filteredContacts() {
             const searchTerm = this.searchText.toLowerCase();
@@ -52,6 +54,20 @@ const app = createApp({
                 }
             });
         },
+
+        sendMessage() {
+            if (!this.newMessageText) return
+            const newMessage = {
+                id: new Date().getTime(),
+                date: new Date().toLocaleDateString(),
+                status: "sent",
+                text: this.newMessageText,
+            }
+
+            this.currentChat.push(newMessage);
+
+            this.newMessageText = "";
+        }
     }
 })
 
