@@ -44,6 +44,22 @@ const app = createApp({
             return `img/avatar${avatar}.jpg`
         },
 
+        getFormattedDate(dateString) {
+            const date = new Date(dateString);
+
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let seconds = date.getSeconds();
+
+            let format = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
+
+            return format
+
+        },
+
         isActive(id) {
             this.currentId = id;
             this.contacts.forEach(contact => {
@@ -55,18 +71,25 @@ const app = createApp({
             });
         },
 
-        sendMessage() {
-            if (!this.newMessageText) return
+        addMessage(status, text) {
             const newMessage = {
                 id: new Date().getTime(),
-                date: new Date().toLocaleDateString(),
-                status: "sent",
-                text: this.newMessageText,
+                date: this.getFormattedDate(new Date().toISOString()),
+                status,
+                text,
             }
-
             this.currentChat.push(newMessage);
+        },
 
+        sendMessage() {
+            if (!this.newMessageText) return
+
+            this.addMessage("sent", this.newMessageText)
             this.newMessageText = "";
+
+            setTimeout(() => {
+                this.addMessage("received", "ok")
+            }, 1000);
         }
     }
 })
