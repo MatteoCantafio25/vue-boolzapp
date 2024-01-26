@@ -14,13 +14,13 @@ const app = createApp({
             // PRENDO GLI ELEMENTI NELLA PAGE DATA
             user,
             contacts,
-            // IMPOSTO CHE IL CURRENT ID PARTE DA 1 DI BASE
+            // IMPOSTO CHE IL CURRENT ID PARTE DA 1
             currentId: 1,
-            // IMPOSTO CHE ACTIVE PARTE FALSO DI BASE
+            // IMPOSTO CHE ACTIVE PARTE FALSO
             active: false,
-            // IMPOSTO CHE IL TESTO CERCATO PARTE VUOTO DI BASE
+            // IMPOSTO CHE IL TESTO CERCATO PARTE VUOTO
             searchText: "",
-            // IMPOSTO CHE IL TESTO DEL NUOVO MESSAGGIO PARTE VUOTO DI BASE
+            // IMPOSTO CHE IL TESTO DEL NUOVO MESSAGGIO PARTE VUOTO
             newMessageText: "",
         }
     },
@@ -75,7 +75,7 @@ const app = createApp({
             // CREO UNA COSTANTE DATE, FUNZIONE NEW DATE E COME PARAMETRO IL PARAMETRO CHE VERRA' DATO NELLA NOSTRA FUNZIONE
             const date = new Date(dateString);
 
-
+            // RICAVO LE INFORMAZIONI CHE MI SERVONO
             let day = date.getDate();
             let month = date.getMonth() + 1;
             let year = date.getFullYear();
@@ -83,8 +83,10 @@ const app = createApp({
             let minutes = date.getMinutes();
             let seconds = date.getSeconds();
 
+            // CREO IL FORMATO
             let format = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`
 
+            // RESTITUISCO IL FORMATO CREATO
             return format
 
         },
@@ -93,7 +95,7 @@ const app = createApp({
         isActive(id) {
             // FACCIO DIVENTARE IL CURRENT ID L'ID CHE MI VERRA' PASSATO COME PARAMETRO
             this.currentId = id;
-            // CICLO L'ARRAY CONTACTS CON UN FOREACH E DICO CHE SE L'ID DATO DAL PARAMETRO E' UGUALE ALL'ID DELL'CONTATTO CORRENTE ALLORA IL CONTATTO AVRA' ACTIVE TRUE INVECE SE L'ID E' DIVERSO ACTIVE SARA' FALSO
+            // CICLO L'ARRAY CONTACTS CON LA FUNZIONE FOREACH E DICO CHE SE L'ID DATO DAL PARAMETRO E' UGUALE ALL'ID DELL'CONTATTO CORRENTE ALLORA IL CONTATTO AVRA' ACTIVE TRUE INVECE SE L'ID E' DIVERSO ACTIVE SARA' FALSO
             this.contacts.forEach(contact => {
                 if (id === contact.id) {
                     contact.active = true
@@ -106,22 +108,23 @@ const app = createApp({
 
         // CREO UNA FUNZIONE PER AGGIUNGERE IL MESSAGGIO (PER NON SCRIVERE PIU' VOLTE LO STESSO BLOCCO DI CODICE)
         addMessage(status, text) {
-            // CREO UN VERO E PROPRIO OGGETTO CHE VERRA' MESSO NELL'ARRAY
+            // CREO UN VERO E PROPRIO OGGETTO CHE VERRA' INSERITO NELL'ARRAY
             const newMessage = {
                 // IMPOSTO CHE L'ID DEVE ESSERE LA DATA AL MILLISECONDO COSI' DA NON AVERE MAI ID UGUALI
                 id: new Date().getTime(),
                 // FORMATTO LA NUOVA DATA COME VOGLIO TRAMITE LA FUNZIONE
                 date: this.getFormattedDate(new Date().toISOString()),
-                // STATUS E TEXT VENGONO IMPOSTATI TRAMITE PARAMETRO DELLA FUNZIONE
+                // STATUS E TEXT VENGONO IMPOSTATI TRAMITE I PARAMETRI DELLA FUNZIONE
                 status,
                 text,
             }
+            // INSERISCO IL NUOVO MESSAGGIO NELL'ARRAY DELLA CHAT CORRENTE
             this.currentChat.push(newMessage);
         },
 
         // CREO UNA FUNZIONE PER MANDARE UN MESSAGGIO
         sendMessage() {
-            // SE NON C'E' NIENTE NELL'INPUT DEL NUOVO MESSAGGIO NON MANDARE NULLA
+            // SE NON C'E' CONTENUTO NEL NUOVO MESSAGGIO NON MANDARE NULLA
             if (!this.newMessageText) return
 
             // USO LA FUNZIONE ADDMESSAGE E METTO I PARAMETRI CHE VOGLIO
