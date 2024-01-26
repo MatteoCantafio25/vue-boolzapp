@@ -60,11 +60,14 @@
                 <!-- Contact Panel -->
                 <div class="contact-panel">
                     <div v-for="contact in filteredContacts" :key="contact.id"
-                        class="contact d-flex align-items-center gap-2 ps-4"
+                        class="contact d-flex align-items-center justify-content-between gap-2 ps-4"
                         :class="{'active' : contact.active === true}" @click="isActive(contact.id)">
-                        <img :src="getAvatarUrl(contact)" :alt="contact.name">
-                        <div class="contact-text-container d-flex align-items-start pb-4">
-                            <h5 class="mb-0">{{contact.name}}</h5>
+                        <div class="contact-text-container d-flex align-items-start">
+                            <img :src="getAvatarUrl(contact)" :alt="contact.name">
+                            <h5 class="mb-0 mt-1 ms-2">{{contact.name}}</h5>
+                        </div>
+                        <div class="date-text-container d-flex align-items-start">
+                            <p class="mb-0 mt-2">{{currentChat[lastMessage].date}}</p>
                         </div>
                     </div>
                 </div>
@@ -77,7 +80,7 @@
                         <img :src="getAvatarUrl(currentContact)" :alt="currentContact.name">
                         <div class="right-header-text-container ms-3">
                             <h5 class="mb-0">{{currentContact.name}}</h5>
-                            <p class="mb-0">Ultimo accesso oggi alle</p>
+                            <p class="mb-0">{{`Ultimo accesso: ${currentChat[lastMessage].date}`}}</p>
                         </div>
                     </div>
                     <div class="right d-flex align-items-center justify-content-between gap-3 pe-3">

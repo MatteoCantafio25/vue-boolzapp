@@ -36,7 +36,11 @@ const app = createApp({
             return this.contacts.filter(contact =>
                 contact.name.toLowerCase().includes(searchTerm)
             );
-        }
+        },
+
+        lastMessage() {
+            return this.currentContact.messages.length - 1;
+        },
     },
 
     methods: {

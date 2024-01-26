@@ -101,6 +101,15 @@ img {
     border-radius: 5px;
 }
 
+.date-text-container {
+    height: 100%;
+}
+
+.date-text-container p {
+    color: #968A84;
+    font-size: 0.8rem
+}
+
 /* Right col */
 
 .right i {
