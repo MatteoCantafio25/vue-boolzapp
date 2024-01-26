@@ -190,4 +190,5 @@ const data = {
 
 }
 
+// DESTRUCTURING
 const { user, contacts } = data;
